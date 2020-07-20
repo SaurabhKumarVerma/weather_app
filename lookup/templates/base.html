@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Hello, world!</title>
+    <style>
+        .Good{background-color: rgb(0, 176, 80);}
+        .Satisfactory{background-color: rgb(146, 208, 80);}
+        .Moderate{background-color: rgb(255, 255, 0);}
+        .Poor{background-color: rgb(255, 153, 0);}
+        .VeryPoor{background-color: rgb(255, 0, 0);}
+        .Severe{background-color: rgb(192, 0, 0);}
+    </style>
   </head>
   <body>
 
@@ -27,9 +35,10 @@
 
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+    <form action = "{% url 'home' %}" method="POST" class="form-inline my-2 my-lg-0">
+      {% csrf_token %}
+      <input class="form-control mr-sm-2" type="search" placeholder="Enter ZipCode" aria-label="Search" name = 'zipcode'>
+      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">LookUP</button>
     </form>
   </div>
 </nav>

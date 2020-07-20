@@ -1,7 +1,29 @@
 {% extends 'base.html' %}
-
+{% load mathfilters %}
 {% block content %}
 
-<h1>HELLO WORLD</h1>
+
+
+
+<div class="jumbotron {{ category_color }} ">
+  <h1 class="display-4">Current Weather</h1>
+    <hr class="my-4">
+  <p class="lead"><b>Weather City And Country:&nbsp</b>{{ api.location.country }}, &nbsp{{ api.location.region }}</p>
+  <p class="lead"><b>Temperature</b> : &nbsp{{ api.current.temperature }}</p>
+  <p class="lead"><b>Weather</b>:&nbsp{{ api.location.name }}</p>
+  <p class="lead"><b>Humidity</b> : &nbsp{{ api.current.humidity }}</p>
+  <p class="lead"><b>Air Quality</b> : &nbsp{{ air_api.data.text }}</p>
+  <p class="lead"><b>Air Quality Message</b> : &nbsp{{ air_api.data.alert }}</p>
+
+      {% if air_api.data.text == "Good" %}
+
+      {% endif %}
+
+</div>
+
+
+
+
+
 
 {% endblock %}
